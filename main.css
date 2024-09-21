@@ -1,0 +1,192 @@
+﻿/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap'); */
+@import url('css2');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    /* font-family: 'Roboto', sans-serif; */
+    /* font-family: 'Kanit', sans-serif; */
+    /* font-family: 'Bangers', cursive; */
+    font-family: 'New Amsterdam', sans-serif;
+    letter-spacing: 1vw;
+    /* font-weight: 400; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: #141027;
+    background-image: url('bot.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@keyframes threeDots {
+    0%, 100% {
+        content: '';
+    }
+    25% {
+        content: '.';
+    }
+    50% {
+        content: '..';
+    }
+    75% {
+        content: '...';
+    }
+}
+
+@keyframes scaleUp {
+    0% {
+        /* font-size: 50px; */
+        font-size: 150%;
+        opacity: 0;
+    }
+    100% {
+        /* font-size: 150px; */
+        font-size: 450%;
+        opacity: 1;
+    }
+}
+
+.animation-scale-up {
+    animation: scaleUp 0.25s ease-out forwards;
+}
+
+.state-wait #state::after {
+    content: '';
+    animation: threeDots 2.5s infinite;
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+}
+
+#indicator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vw;
+    background-color: transparent;
+}
+
+#svg-wrapper{
+    width: 60vw;
+    height: 60vw;
+}
+
+@media (min-width: 1024px) {
+    #svg-wrapper{
+        width: 30vw;
+        height: 30vw;
+    }
+}
+
+@media (max-width: 767px) {
+    #svg-wrapper{
+        width: 80vw;
+        height: 80vw;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.state-wait #svg-wrapper {
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.state-take #svg-wrapper {
+    animation: flicker 1.5s linear infinite;
+}
+
+#overlay {
+    position: absolute;
+    background-color: black;
+    border-radius: 50%;
+    opacity: 0;
+    width: 70vw;
+    height: 70vw;
+    animation: fadeIn 2.5s forwards;
+}
+
+@media (min-width: 1024px) {
+    #overlay{
+        width: 30vw;
+        height: 30vw;
+    }
+}
+
+@media (max-width: 767px) {
+    #overlay{
+        width: 70vw;
+        height: 70vw;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 0.7;
+    }
+}
+h1, h2 {
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    color: whitesmoke;
+}
+
+h1 {
+    /* font-size: 150px; */
+    font-size: 400%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h2 {
+    /* font-size: 50px; */
+    font-size: 100%;
+    bottom: 2.5%;
+    transform: translateX(-50%);
+    opacity: 0.75;
+}
+/* latin-ext */
+@font-face {
+    font-family: 'New Amsterdam';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(s/newamsterdam/v1/YA9Vr02Y5lucHqUlbEe51kBtp7CMi93T_dFUYw.woff2) format('woff2');
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'New Amsterdam';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(s/newamsterdam/v1/YA9Vr02Y5lucHqUlbEe51kBtp76Mi93T_dE.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  
